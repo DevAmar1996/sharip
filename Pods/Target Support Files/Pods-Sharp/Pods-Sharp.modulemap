@@ -1,0 +1,6 @@
+framework module Pods_Sharp {
+  umbrella header "Pods-Sharp-umbrella.h"
+
+  export *
+  module * { export * }
+}

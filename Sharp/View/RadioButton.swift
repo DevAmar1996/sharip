@@ -9,13 +9,44 @@
 import UIKit
 
 class RadioButton: UIButton {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    var alternate : Array<RadioButton>?
+    
+    
+    
+    func unSelectAlternate(){
+        if alternate != nil {
+            self.isSelected = true;
+            
+            for aButton:RadioButton in alternate! {
+                aButton.isSelected = false;
+            }
+        }else{
+            print("nil alternate")
+            toggleBtn()
+        }
     }
-    */
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        unSelectAlternate();
+        super.touchesBegan(touches, with: event)
+    }
+    
+    private func toggleBtn(){
+        self.isSelected = !isSelected
+    }
+    
+    override var isSelected :Bool {
+        didSet {
+            if(!isSelected){
+                self.setBackgroundImage(UIImage(named : "unChecked"), for: .normal);
+            }else{
+                //self.isSelected = true;
+                self.setBackgroundImage(UIImage(named : "checked"), for: .normal);
+            }
+        }
+    }
+    
+    
+    
 }

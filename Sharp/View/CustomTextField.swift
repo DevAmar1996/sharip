@@ -8,14 +8,12 @@
 
 import UIKit
 
-class CustomTextField: UILabel {
+class CustomTextField: UITextField {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override func awakeFromNib() {
+        layer.shadowColor = UIColor.lightBLue.cgColor
+        layer.shadowOffset = CGSize(width: 4, height: 4)
+        layer.shadowRadius = 4.0
+        layer.shadowOpacity = 4.0
     }
-    */
-
 }

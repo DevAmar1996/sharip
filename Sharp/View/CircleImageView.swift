@@ -10,12 +10,14 @@ import UIKit
 
 class CircleImageView: UIImageView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override func awakeFromNib() {
+        layer.cornerRadius = frame.width/2
+        layer.shadowColor = UIColor.white.cgColor
+        layer.shadowOffset = CGSize(width: 16, height: 16)
+        layer.shadowRadius = 16.0
+        layer.shadowOpacity = 16.0
+        self.clipsToBounds = true
+        self.layer.masksToBounds = true
     }
-    */
 
 }

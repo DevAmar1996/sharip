@@ -8,7 +8,7 @@
 
 import UIKit
 
-class customImageView: UIButton {
+class CustomImageView: UIImageView {
     
     override func awakeFromNib() {
       tintColor = UIColor.orangeColor

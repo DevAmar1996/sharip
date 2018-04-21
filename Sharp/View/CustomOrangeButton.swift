@@ -9,13 +9,11 @@
 import UIKit
 
 class CustomOrangeButton: UIButton {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override func awakeFromNib() {
+        backgroundColor = UIColor.orangeColor
+        setTitleColor(UIColor.white, for: .normal)
+        layer.cornerRadius = 15
+        contentEdgeInsets = UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
     }
-    */
 
 }
